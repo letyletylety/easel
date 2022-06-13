@@ -1,3 +1,4 @@
+import 'package:easel_example/src/easel.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -75,18 +76,4 @@ class CanvasPainter extends CustomPainter {
 
   @override
   bool shouldRebuildSemantics(CanvasPainter oldDelegate) => false;
-}
-
-class Easel {
-  final Canvas canvas;
-  final Size size;
-
-  const Easel(this.canvas, this.size);
-
-  /// draw one pixel
-  void putPixel(double y, double x, Color color) {
-    final p = Paint()..color = color;
-
-    canvas.drawRect(Rect.fromLTWH(x, y, 1, 1), p);
-  }
 }
