@@ -7,7 +7,7 @@ class Scene {
   Camera camera = Camera();
   late Easel viewport; //= Easel(canvas, size);
 
-  Scene() {}
+  Scene();
 }
 
 class Camera extends SceneObject {}
