@@ -1,5 +1,6 @@
 import 'package:flutter/painting.dart';
 
+// the 2D canvas
 class Easel {
   final Canvas canvas;
   final Size size;
