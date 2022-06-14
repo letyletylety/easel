@@ -1,6 +1,6 @@
+import 'package:easel/gg_method_channel.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gg/gg_method_channel.dart';
 
 void main() {
   MethodChannelGg platform = MethodChannelGg();

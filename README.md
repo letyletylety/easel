@@ -1,4 +1,4 @@
-# gg
+# easel
 
 A new Flutter plugin project.
 
