@@ -56,19 +56,24 @@ class TheCanvas extends StatelessWidget {
 class CanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final p = Easel(canvas, size);
+    final easel = Easel(canvas, size);
 
-    p.putPixel(100, 100, Colors.red);
-    p.putPixel(100, 101, Colors.red);
-    p.putPixel(100, 102, Colors.red);
-    p.putPixel(100, 103, Colors.red);
-    p.putPixel(101, 103, Colors.red);
-    p.putPixel(102, 103, Colors.red);
-    p.putPixel(103, 103, Colors.red);
-    p.putPixel(101, 101, Colors.red);
-    p.putPixel(102, 102, Colors.red);
-    p.putPixel(103, 103, Colors.red);
-    p.putPixel(104, 104, Colors.red);
+    easel.putPixel(0, 0, Colors.red);
+    easel.putPixel(1, 0, Colors.red);
+    easel.putPixel(2, 0, Colors.red);
+    easel.putPixel(3, 0, Colors.red);
+    easel.putPixel(4, 0, Colors.red);
+    // p.putPixel(100, 100, Colors.red);
+    // p.putPixel(100, 101, Colors.red);
+    // p.putPixel(100, 102, Colors.red);
+    // p.putPixel(100, 103, Colors.red);
+    // p.putPixel(101, 103, Colors.red);
+    // p.putPixel(102, 103, Colors.red);
+    // p.putPixel(103, 103, Colors.red);
+    // p.putPixel(101, 101, Colors.red);
+    // p.putPixel(102, 102, Colors.red);
+    // p.putPixel(103, 103, Colors.red);
+    // p.putPixel(104, 104, Colors.red);
   }
 
   @override

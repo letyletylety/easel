@@ -7,9 +7,11 @@ class Easel {
   const Easel(this.canvas, this.size);
 
   /// draw one pixel
-  void putPixel(double y, double x, Color color) {
-    final p = Paint()..color = color;
+  void putPixel(double x, double y, Color color) {
+    final p = Paint()
+      ..color = color
+      ..strokeWidth = 1;
 
-    canvas.drawRect(Rect.fromLTWH(x, y, 1, 1), p);
+    canvas.drawRect(size.center(Offset(x, y)) & const Size(1, 1), p);
   }
 }
