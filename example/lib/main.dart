@@ -1,4 +1,6 @@
+import 'package:easel_example/src/easel.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main(List<String> args) {
   runApp(const TestApp());
