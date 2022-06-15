@@ -1,4 +1,4 @@
-import 'package:easel_example/src/easel_color.dart';
+import 'package:easel_example/src/easel/easel_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

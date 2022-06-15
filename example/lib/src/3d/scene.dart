@@ -1,4 +1,4 @@
-import 'package:easel_example/src/easel.dart';
+import 'package:easel_example/src/easel/easel.dart';
 import 'package:vector_math/vector_math_64.dart';
 
 /// 3D
