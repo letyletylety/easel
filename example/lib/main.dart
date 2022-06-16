@@ -1,16 +1,11 @@
-import 'package:easel_example/artworks/example_artwork.dart';
+import 'package:easel_example/artworks/artworks.dart';
 import 'package:easel_example/src/drawable/drawables/drawables.dart';
 import 'package:easel_example/src/widget/artwork.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 void main(List<String> args) {
   runApp(const TestApp());
 }
-
-final gorouter = GoRouter(routes: [
-  GoRoute(path: '/', builder: (ctx, st) => const MainPage()),
-]);
 
 class TestApp extends StatelessWidget {
   const TestApp({Key? key}) : super(key: key);

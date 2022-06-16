@@ -9,7 +9,9 @@ abstract class Drawable {}
 
 // 색깔이 있는 그릴 수 있는 것
 class ColoredDrawable extends Drawable {
-  Color color = const Color(0xFF000000);
+  static const black = Color(0xFF000000);
+
+  Color color = black;
 
   ColoredDrawable(this.color);
 }

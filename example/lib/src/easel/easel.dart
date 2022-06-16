@@ -22,6 +22,11 @@ class Easel {
           Line l = drawable as Line;
           drawLine(l);
           break;
+        case WireFrameTriangle:
+          WireFrameTriangle wt = drawable as WireFrameTriangle;
+          drawWireframeTriangle(wt);
+          break;
+
         default:
           debugPrint('can\'t draw : unknown type: ?');
       }
@@ -50,5 +55,18 @@ class Easel {
 
     canvas.drawLine(
         size.center(line.a.toOffset()), size.center(line.b.toOffset()), p);
+  }
+
+  void drawWireframeTriangle(WireFrameTriangle wt) {
+    final p = Paint()
+      ..color = wt.color
+      ..strokeWidth = wt.thickness;
+
+    canvas.drawLine(
+        size.center(wt.a.toOffset()), size.center(wt.b.toOffset()), p);
+    canvas.drawLine(
+        size.center(wt.b.toOffset()), size.center(wt.c.toOffset()), p);
+    canvas.drawLine(
+        size.center(wt.c.toOffset()), size.center(wt.a.toOffset()), p);
   }
 }
