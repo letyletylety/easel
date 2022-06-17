@@ -35,3 +35,22 @@ class WireFrameTriangle extends Triangle with HasThickness {
     changeThickness(thickness);
   }
 }
+
+class FilledTriangle extends Triangle {
+  FilledTriangle(super.a, super.b, super.c,
+      {super.color = ColoredDrawable.black});
+
+  FilledTriangle.xyxyxy(
+      double x0, double y0, double x1, double y1, double x2, double y2,
+      {Color color = ColoredDrawable.black})
+      : super.xyxyxy(x0, y0, x1, y1, x2, y2, color: color);
+}
+
+class ShadedTriangle extends FilledTriangle {
+  ShadedTriangle(super.a, super.b, super.c);
+
+  ShadedTriangle.xyxyxy(
+      double x0, double y0, double x1, double y1, double x2, double y2,
+      {required MaterialColor color})
+      : super.xyxyxy(x0, y0, x1, y1, x2, y2, color: color);
+}

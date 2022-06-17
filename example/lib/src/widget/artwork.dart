@@ -7,8 +7,8 @@ class Artwork extends StatelessWidget {
   const Artwork({
     Key? key,
     required this.components,
-    this.width = double.infinity,
-    this.height = double.infinity,
+    this.width = 0,
+    this.height = 0,
     this.redraw = false,
   }) : super(key: key);
 
@@ -25,6 +25,9 @@ class Artwork extends StatelessWidget {
       width: width,
       height: height,
       child: CustomPaint(
+        willChange: redraw,
+        isComplex: redraw,
+        size: Size(width, height),
         painter: UnknownPainter(
           components,
           redraw,

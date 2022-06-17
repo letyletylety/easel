@@ -40,8 +40,6 @@ Artwork(
                 buildTextSpan(' 클래스는 화면에 그릴 수 있는 가장 작은 Drawable 입니다.'),
                 buildLineBreak(2),
                 buildTextSpan('Pixel 은 x와 y 좌표, 그리고 색깔을 속성으로 가질 수 있습니다.'),
-                buildLineBreak(2),
-                buildTextSpan('(0,0) 은 Artwork의 중앙을 나타냅니다.'),
               ],
             ),
           ),
@@ -61,20 +59,20 @@ Artwork(
             height: 50,
           ),
         ),
-        PixelArt(),
+        const PixelArtColumn(),
       ],
     );
   }
 }
 
-class PixelArt extends StatefulWidget {
-  const PixelArt({Key? key}) : super(key: key);
+class PixelArtColumn extends StatefulWidget {
+  const PixelArtColumn({Key? key}) : super(key: key);
 
   @override
-  State<PixelArt> createState() => _PixelArtState();
+  State<PixelArtColumn> createState() => _PixelArtColumnState();
 }
 
-class _PixelArtState extends State<PixelArt> {
+class _PixelArtColumnState extends State<PixelArtColumn> {
   late final StreamController<List<Drawable>> _colorStreamController;
   late final Timer _timer;
 
@@ -118,7 +116,7 @@ class _PixelArtState extends State<PixelArt> {
     return ArtworkColumn(
       left: RichText(
         text: TextSpan(children: [
-          buildTextSpan('이론 상 픽셀만으로 모든 Artwork을 그릴 수 있습니다.'),
+          buildTextSpan('잘 안보이시나요? 10만개는 어때요?'),
         ]),
       ),
       right: StreamBuilder<List<Drawable>>(

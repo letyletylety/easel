@@ -12,7 +12,6 @@ class ArtworkColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
         child: Row(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Padding(

@@ -57,3 +57,25 @@ class LineArtwork extends StatelessWidget {
     );
   }
 }
+
+
+        // ArtworkColumn(
+        //   left: CuratorMessage(strings: [
+        //     buildBoldWord('x, y'),
+        //     buildTextSpanln(' 좌표계.'),
+        //     buildTextSpan('(0,0) 은 Artwork의 중앙을 나타냅니다.'),
+        //   ]),
+        //   right: Artwork(
+        //     components: [
+        //       Line.xyxy(-100, 0, 100, 0, thickness: 0.5),
+        //       Line.xyxy(0, -100, 0, 100, thickness: 0.5),
+        //       //
+        //       Pixel(50, 50, Colors.red),
+        //       Pixel(-50, -50, Colors.yellow),
+        //       Pixel(-50, 50, Colors.green),
+        //       Pixel(50, -50, Colors.blue),
+        //     ],
+        //     width: 200,
+        //     height: 200,
+        //   ),
+        // ),

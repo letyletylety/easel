@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-TextSpan buildBoldWord(String text) => TextSpan(
+TextSpan buildBoldWord(String text, [GestureRecognizer? recognizer]) =>
+    TextSpan(
+      recognizer: recognizer,
       style: const TextStyle(
         decoration: TextDecoration.underline,
         fontSize: 18,
@@ -10,7 +13,9 @@ TextSpan buildBoldWord(String text) => TextSpan(
       text: text,
     );
 
-TextSpan buildTextSpan(String text) => TextSpan(
+TextSpan buildTextSpan(String text, [GestureRecognizer? recognizer]) =>
+    TextSpan(
+      recognizer: recognizer,
       style: const TextStyle(
         fontSize: 16,
         color: Colors.black87,
@@ -18,13 +23,19 @@ TextSpan buildTextSpan(String text) => TextSpan(
       text: text,
     );
 
-TextSpan buildTextSpanln(String text) => TextSpan(
-      style: const TextStyle(
-        fontSize: 16,
-        color: Colors.black87,
-      ),
-      text: '$text\n',
-    );
+TextSpan buildTextSpanln(String text, [int line = 1]) {
+  String blanks = "";
+  for (int i = 0; i < line; i++) {
+    blanks += '\n';
+  }
+  return TextSpan(
+    style: const TextStyle(
+      fontSize: 16,
+      color: Colors.black87,
+    ),
+    text: '$text$blanks',
+  );
+}
 
 TextSpan buildLineBreak(int line) {
   String text = "";

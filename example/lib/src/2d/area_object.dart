@@ -13,6 +13,11 @@ class Point {
   double get y => v.y;
 
   Offset toOffset() {
-    return Offset(x, y);
+    return Offset(x, -y);
+  }
+
+  Offset toCenteredOffset(Size size) {
+    return size.center(Offset(x, -y));
+    return Offset(x, -y);
   }
 }
