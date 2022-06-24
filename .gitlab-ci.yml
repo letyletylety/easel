@@ -3,7 +3,6 @@ image: cirrusci/flutter:latest
 variables:
 
 before_script:
-  - flutter upgrade
   - flutter config --enable-web
   - flutter pub get
 
