@@ -1,17 +1,19 @@
-image: cirrusci/flutter:latest
-
-variables:
-
-before_script:
-  - flutter config --enable-web
-  - flutter pub get
+build_pages:
+  stage: build
+  image: cirrusci/flutter:stable
+  before_script:
+    - flutter config --enable-web
+    - flutter pub get
+  script:
+    - cd example
+    - flutter build web
+  artifacts:
+    paths:
+      - build/web
 
 pages:
   stage: deploy
   script:
-    - cd example
-    - flutter build web
-    - echo -e "<script>(function () {document.write('<base href=\"' + document.location.pathname + '\" />');}());</script>\n$(cat build/web/index.html)" > build/web/index.html
     - cp -r build/web public
   artifacts:
     paths:
