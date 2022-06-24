@@ -1,0 +1,22 @@
+image: cirrusci/flutter:latest
+
+variables:
+
+before_script:
+  - flutter channel beta
+  - flutter upgrade
+  - flutter config --enable-web
+  - flutter pub get
+
+pages:
+  stage: deploy
+  script:
+    - cd example
+    - flutter build web
+    - echo -e "<script>(function () {document.write('<base href=\"' + document.location.pathname + '\" />');}());</script>\n$(cat build/web/index.html)" > build/web/index.html
+    - cp -r build/web public
+  artifacts:
+    paths:
+      - public
+  only:
+    - staging
