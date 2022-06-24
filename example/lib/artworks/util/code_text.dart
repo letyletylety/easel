@@ -1,9 +1,5 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_highlight/themes/darcula.dart';
-import 'package:flutter_highlight/themes/ocean.dart';
-import 'package:flutter_highlight/themes/vs.dart';
-import 'package:flutter_highlight/themes/vs2015.dart';
 import 'package:flutter_highlight/themes/xcode.dart';
 import 'package:highlight/languages/dart.dart';
 

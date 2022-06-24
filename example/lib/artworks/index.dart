@@ -1,6 +1,7 @@
 import 'package:easel_example/artworks/artworks.dart';
 import 'package:easel_example/artworks/filled_tri_artwork.dart';
 import 'package:easel_example/artworks/wireframe_tri_artwork.dart';
+import 'package:easel_example/src/drawable/drawables/drawables.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,7 +10,7 @@ import 'package:go_router/go_router.dart';
 /// // means seperate and put divider
 abstract class RouteNames {
   static const _pageOrder =
-      '$index//$pixel/$line/$triangle/>$wireFrameTri/>$filledTri';
+      '$index//$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle';
 
   static const index = 'index';
   static const pixel = 'pixel';
@@ -18,6 +19,8 @@ abstract class RouteNames {
   static const filledTri = 'filledTri';
 
   static const line = 'line';
+
+  static const circle = 'circle';
 }
 
 final gorouter = GoRouter(routes: [
@@ -45,6 +48,10 @@ final gorouter = GoRouter(routes: [
       path: '/filledTri',
       name: RouteNames.filledTri,
       builder: (ctx, st) => const FilledTriPage()),
+  GoRoute(
+      path: '/${RouteNames.circle}',
+      name: RouteNames.circle,
+      builder: (ctx, st) => const CirclePage()),
 ]);
 
 List<Widget> buildMenu(BuildContext context) {

@@ -34,6 +34,10 @@ class Easel {
           ShadedTriangle st = drawable as ShadedTriangle;
           drawShadedTriangle(st);
           break;
+        case Circle:
+          Circle c = drawable as Circle;
+          drawCircle(c);
+          break;
         default:
           debugPrint('can\'t draw : unknown type: ?');
       }
@@ -122,5 +126,13 @@ class Easel {
       ..lineTo(c.dx, c.dy)
       ..lineTo(a.dx, a.dy);
     canvas.drawShadow(path, st.color, 5, true);
+  }
+
+  void drawCircle(Circle c) {
+    final p = Paint()..color = c.color;
+
+    final co = c.center.toCenteredOffset(size);
+
+    canvas.drawCircle(co, c.radius, p);
   }
 }
