@@ -23,7 +23,7 @@ Artwork(
 """)),
       ArtworkColumn(
         left: CuratorMessage(strings: [
-          buildTextSpanln('helo'),
+          buildTextSpanln(''),
         ]),
         right: Artwork(
           components: [

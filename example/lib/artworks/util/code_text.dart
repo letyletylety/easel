@@ -38,7 +38,6 @@ class _CodeTextState extends State<CodeText> {
     return CodeField(
       background: Colors.grey[200],
       controller: codeController,
-      enabled: false,
     );
   }
 }
