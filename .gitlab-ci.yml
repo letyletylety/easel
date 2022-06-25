@@ -9,12 +9,12 @@ build_pages:
     - flutter build web
   artifacts:
     paths:
-      - build/web
+      - example/build/web
 
 pages:
   stage: deploy
   script:
-    - cp -r build/web public
+    - cp -r example/build/web public
   artifacts:
     paths:
       - public
