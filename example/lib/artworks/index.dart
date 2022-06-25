@@ -1,7 +1,6 @@
 import 'package:easel_example/artworks/artworks.dart';
 import 'package:easel_example/artworks/filled_tri_artwork.dart';
 import 'package:easel_example/artworks/wireframe_tri_artwork.dart';
-import 'package:easel_example/src/drawable/drawables/drawables.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,7 +9,7 @@ import 'package:go_router/go_router.dart';
 /// // means seperate and put divider
 abstract class RouteNames {
   static const _pageOrder =
-      '$index//$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle';
+      '$index//$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle//';
 
   static const index = 'index';
   static const pixel = 'pixel';
@@ -88,6 +87,7 @@ final gorouter = GoRouter(
         child: const CirclePage(),
       ),
     ),
+    // GoRoute(path: ),
   ],
   urlPathStrategy: UrlPathStrategy.path,
 );

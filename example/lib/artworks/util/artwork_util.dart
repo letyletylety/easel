@@ -1,4 +1,4 @@
-import 'package:easel_example/src/drawable/drawables/line.dart';
+import 'package:easel/easel.dart';
 
 /// x-y coordinate Line
 List<Line> coordLines(int width, int height) => [

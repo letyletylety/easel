@@ -1,5 +1,4 @@
-import 'package:easel_example/src/drawable/drawable.dart';
-import 'package:easel_example/src/drawable/drawables/drawables.dart';
+import 'package:easel/easel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

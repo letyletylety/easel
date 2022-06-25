@@ -1,8 +1,8 @@
 import 'dart:ui';
 
+import 'package:easel/src/drawable/drawables/line.dart';
+import 'package:easel/src/drawable/drawables/pixel.dart';
 import 'package:flutter/material.dart';
-
-import 'drawables/drawables.dart';
 
 // 그릴 수 있는 것
 abstract class Drawable {}
