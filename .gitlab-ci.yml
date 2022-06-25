@@ -14,7 +14,6 @@ build_pages:
 pages:
   stage: deploy
   script:
-    - cd example
     - cp -r build/web ../public
   artifacts:
     paths:
