@@ -1,7 +1,5 @@
+import 'package:easel/easel.dart';
 import 'package:easel_example/artworks/artworks.dart';
-import 'package:easel_example/src/2d/area_object.dart';
-import 'package:easel_example/src/drawable/drawables/drawables.dart';
-import 'package:easel_example/src/widget/artwork.dart';
 import 'package:flutter/material.dart';
 
 class FilledTriPage extends StatelessWidget {
@@ -23,7 +21,7 @@ Artwork(
 """)),
       ArtworkColumn(
         left: CuratorMessage(strings: [
-          buildTextSpanln('helo'),
+          buildTextSpanln(''),
         ]),
         right: Artwork(
           components: [

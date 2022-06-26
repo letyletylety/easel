@@ -1,7 +1,5 @@
+import 'package:easel/easel.dart';
 import 'package:easel_example/artworks/util/util.dart';
-import 'package:easel_example/src/2d/area_object.dart';
-import 'package:easel_example/src/drawable/drawables/line.dart';
-import 'package:easel_example/src/widget/artwork.dart';
 import 'package:flutter/material.dart';
 
 class LinePage extends StatelessWidget {

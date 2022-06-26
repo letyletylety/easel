@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:easel/easel.dart';
 import 'package:easel_example/artworks/artworks.dart';
-import 'package:easel_example/src/drawable/drawable.dart';
-import 'package:easel_example/src/drawable/drawables/drawables.dart';
-import 'package:easel_example/src/widget/artwork.dart';
 import 'package:flutter/material.dart';
 
 class PixelPage extends StatelessWidget {
