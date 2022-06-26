@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:easel/easel.dart';
 import 'package:vector_math/vector_math.dart';
 
 class Point {
@@ -18,6 +19,5 @@ class Point {
 
   Offset toCenteredOffset(Size size) {
     return size.center(Offset(x, -y));
-    return Offset(x, -y);
   }
 }

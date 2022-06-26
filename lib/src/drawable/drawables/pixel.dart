@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:easel/src/drawable/drawables/drawable.dart';
 
+/// The smallest drawable with color
+/// (x, y, color)
 class Pixel extends ColoredDrawable {
   final double x, y;
 
