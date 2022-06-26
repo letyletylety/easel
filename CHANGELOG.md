@@ -6,3 +6,4 @@
 
 - draw segment
 - fix broken image in readme.md
+- support_platforms = all
