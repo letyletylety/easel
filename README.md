@@ -1,6 +1,20 @@
 # easel
 
-A canvas helper
+The CustomPaint in declarative way
+
+![Circle example](./circle.png)
+
+```dart
+Artwork(
+    width: 400,
+    height: 400,
+    components: [
+        ...coordLines(400, 400),
+        Circle(Point(100, 100), 100),
+        Circle.xyr(-100, -100, 50, color: Colors.lightBlue)
+    ],
+),
+```
 
 ## How to use?
 
