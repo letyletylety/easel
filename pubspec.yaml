@@ -1,8 +1,9 @@
 name: easel
 description: The CustomPaint in declarative way
-version: 0.0.1
+version: 0.0.2
 homepage: https://letyletylety.gitlab.io/easel_by_example/
 repository: https://github.com/letyletylety/easel
+issue_tracker: https://github.com/letyletylety/easel/issues
 
 environment:
   sdk: '>=2.17.1 <3.0.0'
