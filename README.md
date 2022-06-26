@@ -4,9 +4,9 @@ A canvas helper
 
 ## TODOs
 
-[] 3D scene
-[] gesture detecting
-[] animation
+[ ] 3D scene
+[ ] gesture detecting
+[ ] animation
 
 ## How to add new drawable?
 
