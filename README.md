@@ -2,6 +2,10 @@
 
 A canvas helper
 
+## How to use?
+
+see [Examples](https://letyletylety.gitlab.io/easel_by_example/)
+
 ## TODOs
 
 - [ ] 3D scene
