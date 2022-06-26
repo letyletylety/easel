@@ -21,7 +21,7 @@ class WireFrameTriPage extends StatelessWidget {
                 'WireFrameTriangle 에는 color와 thickness를 지정할 수 있습니다.', 2),
             buildTextSpanln('xyxyxy 생성자를 이용해서 Point 없이 생성할 수도 있습니다.', 2),
           ]),
-          right: CodeText("""Artwork(
+          right: const CodeText("""Artwork(
   components: [
     // this is helper method
     ...coordLines(500, 500),
@@ -38,7 +38,7 @@ class WireFrameTriPage extends StatelessWidget {
 """),
         ),
         ArtworkColumn(
-          left: CuratorMessage(strings: []),
+          left: const CuratorMessage(strings: []),
           right: Artwork(
             components: [
               // this is helper method
