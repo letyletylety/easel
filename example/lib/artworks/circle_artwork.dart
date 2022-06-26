@@ -31,7 +31,7 @@ class CirclePage extends StatelessWidget {
 """),
         ),
         ArtworkColumn(
-          left: CuratorMessage(
+          left: const CuratorMessage(
             strings: [],
           ),
           right: Artwork(

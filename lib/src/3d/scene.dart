@@ -1,5 +1,6 @@
-import 'package:easel/src/easel/easel.dart';
 import 'package:vector_math/vector_math_64.dart';
+
+import '../easel/easel.dart';
 
 /// 3D
 /// the set of objects you may be interested in rendering

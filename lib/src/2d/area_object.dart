@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:easel/easel.dart';
 import 'package:vector_math/vector_math.dart';
 
 class Point {

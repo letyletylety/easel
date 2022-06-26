@@ -1,4 +1,3 @@
-import 'package:easel/src/drawable/drawables/drawable.dart';
 import 'package:easel/src/drawable/drawable.dart';
 import 'package:flutter/material.dart';
 
@@ -112,9 +111,9 @@ class Easel {
   }
 
   void drawShadedTriangle(ShadedTriangle st) {
-    final p = Paint()
-      ..color = st.color
-      ..style = PaintingStyle.fill;
+    // final p = Paint()
+    //   ..color = st.color
+    //   ..style = PaintingStyle.fill;
 
     final a = st.a.toCenteredOffset(size);
     final b = st.b.toCenteredOffset(size);
