@@ -22,6 +22,21 @@ mixin HasThickness on Drawable {
   }
 }
 
+mixin HasPrecision on Drawable {
+  int precision = 1;
+  changePrecision(int p) {
+    if (p < 1) {
+      throw PrecisionError("?");
+    }
+
+    precision = p;
+  }
+}
+
+class PrecisionError extends Error {
+  PrecisionError(String s);
+}
+
 abstract class DrawableDebugger {
   static print(Drawable drawable) {
     switch (drawable.runtimeType) {
