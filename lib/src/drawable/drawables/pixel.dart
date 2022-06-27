@@ -8,4 +8,8 @@ class Pixel extends ColoredDrawable {
   final double x, y;
 
   Pixel(this.x, this.y, [Color color = const Color(0xFF000000)]) : super(color);
+
+  Offset toCenteredOffset(Size size) {
+    return size.center(Offset(x, -y));
+  }
 }
