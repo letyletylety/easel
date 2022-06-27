@@ -152,7 +152,7 @@ class IndexPage extends StatelessWidget {
             ),
           ),
           const Text(
-            'The CustomPaint in declarative way',
+            'The CustomPaint in a declarative way',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18.0,
