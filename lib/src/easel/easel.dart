@@ -1,6 +1,6 @@
+import 'package:easel/src/2d/area_object.dart';
 import 'package:easel/src/drawable/drawable.dart';
 import 'package:easel/src/easel/easel_color.dart';
-import 'package:easel/src/easel/easel_helper.dart';
 import 'package:flutter/material.dart';
 
 // the 2D canvas
@@ -143,51 +143,97 @@ class Easel {
     canvas.drawCircle(co, c.radius, p);
   }
 
+  ///  draw [Segment]
   void drawSegment(Segment seg) {
     final a = seg.a;
     final b = seg.b;
-    final precision = seg.precision;
 
-    final unit = 1 / precision;
-    // final p = Paint()..color = seg.color;
+    // // parallel to x axis
+    // if (b.x - a.x == 0) {
+    //   canvas.drawLine(
+    //       a.toCenteredOffset(size), b.toCenteredOffset(size), paint);
+    // }
+    // // parallel to y axis
+    // if (b.y - a.y == 0) {}
 
+    late int unit;
     if ((b.x - a.x).abs() > (b.y - a.y).abs()) {
-      if (a.x > b.x) {
-        drawSegment(Segment(b, a));
-        return;
-      }
-      final ys = EaselHelper.interpolate(a.x, a.y, b.x, b.y, precision);
-
-      var x = a.x;
-      final len = ys.length;
-      for (int i = 0; i < len; i++) {
-        final mixed = a.color.mix(b.color, i / len);
-        putPixel(Pixel(
-          x,
-          ys[i].toDouble(),
-          mixed,
-        ));
-        x += unit;
-      }
+      // below 45
+      // ▶◀
+      unit = (b.x - a.x).abs().floor();
     } else {
-      if (a.y > b.y) {
-        drawSegment(Segment(b, a));
-        return;
-      }
+      unit = (b.y - a.y).abs().floor();
+    }
 
-      final xs = EaselHelper.interpolate(a.y, a.x, b.y, b.x, precision);
+    if (unit == 0) {
+      putPixel(a);
+    }
 
-      var y = a.y;
-      final len = xs.length;
-      for (int i = 0; i < len; i++) {
-        final mixed = a.color.mix(b.color, i / len);
-        putPixel(Pixel(
-          xs[i].toDouble(),
-          y,
-          mixed,
-        ));
-        y += unit;
-      }
+    unit *= seg.precision;
+
+    final dx = (b.x - a.x) / unit;
+    final dy = (b.y - a.y) / unit;
+
+    var point = Point(a.x, a.y);
+    var nextPoint = point + Offset(dx, dy);
+
+    for (int i = 0; i < unit; i++) {
+      final mixed = a.color.mix(b.color, i / unit);
+      canvas.drawLine(
+        point.toCenteredOffset(size),
+        nextPoint.toCenteredOffset(size),
+        Paint()..color = mixed,
+      );
+
+      point = nextPoint;
+      nextPoint += Offset(dx, dy);
     }
   }
+  //   final unit = 1.0 / precision;
+  //   // final p = Paint()..color = seg.color;
+
+  //   if ((b.x - a.x).abs() > (b.y - a.y).abs()) {
+  //     if (a.x > b.x) {
+  //       drawSegment(Segment(b, a));
+  //       return;
+  //     }
+  //     final ys = EaselHelper.interpolate(a.x, a.y, b.x, b.y, precision);
+
+  //     var x = a.x;
+  //     final len = ys.length;
+  //     for (int i = 0; i < len; i++) {
+  //       final mixed = a.color.mix(b.color, i / len);
+  //       putPixel(
+  //         Pixel(
+  //           x,
+  //           ys[i].toDouble(),
+  //           mixed,
+  //         ),
+  //         // unit.toDouble(),
+  //       );
+  //       x += unit;
+  //     }
+  //   } else {
+  //     if (a.y > b.y) {
+  //       drawSegment(Segment(b, a));
+  //       return;
+  //     }
+
+  //     final xs = EaselHelper.interpolate(a.y, a.x, b.y, b.x, precision);
+
+  //     var y = a.y;
+  //     final len = xs.length;
+  //     for (int i = 0; i < len; i++) {
+  //       final mixed = a.color.mix(b.color, i / len);
+  //       putPixel(
+  //         Pixel(
+  //           xs[i].toDouble(),
+  //           y,
+  //           mixed,
+  //         ),
+  //         // unit.toDouble(),
+  //       );
+  //       y += unit;
+  //     }
+  //   }
 }

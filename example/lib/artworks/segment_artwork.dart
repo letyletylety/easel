@@ -38,7 +38,7 @@ class SegmentPage extends StatelessWidget {
               '이 값이 커진다고 해서 무조건 이 현상이 줄어드는 것은 아니므로 최대한 이 값을 작게 유지하세요'),
           buildTextSpanln('기본값은 10으로 설정되어 있습니다.', 2),
         ]),
-        right: CodeText("""
+        right: const CodeText("""
 Artwork(width: 400, height: 400, components: [
   // Line(Point(-100, 150), Point(100, 150)),
   Segment(Pixel(-100, 150), Pixel(100, 150)),
@@ -72,7 +72,7 @@ Artwork(width: 400, height: 400, components: [
 """),
       ),
       ArtworkColumn(
-        left: CuratorMessage(strings: []),
+        left: const CuratorMessage(strings: []),
         right: Artwork(width: 400, height: 400, components: [
           // same as Line(Point(-100, 150), Point(100, 150)),
           Segment(Pixel(-100, 150), Pixel(100, 150)),
