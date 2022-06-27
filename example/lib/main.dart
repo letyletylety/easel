@@ -15,6 +15,7 @@ class TestApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       routeInformationParser: gorouter.routeInformationParser,
       routerDelegate: gorouter.routerDelegate,
     );
