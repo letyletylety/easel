@@ -1,4 +1,6 @@
 import 'package:easel/src/drawable/drawable.dart';
+import 'package:easel/src/easel/easel_color.dart';
+import 'package:easel/src/easel/easel_helper.dart';
 import 'package:flutter/material.dart';
 
 // the 2D canvas
@@ -36,6 +38,11 @@ class Easel {
           Circle c = drawable as Circle;
           drawCircle(c);
           break;
+        case Segment:
+          Segment seg = drawable as Segment;
+          drawSegment(seg);
+          break;
+
         default:
           debugPrint('can\'t draw : unknown type: ?');
       }
@@ -52,12 +59,14 @@ class Easel {
   }
 
   /// draw one pixel
-  void putPixel(Pixel pixel) {
+  void putPixel(Pixel pixel, [double precision = 1]) {
     final p = Paint()
       ..color = pixel.color
-      ..strokeWidth = 1;
+      ..strokeWidth = precision;
 
-    canvas.drawRect(makeOffset(size, pixel.x, pixel.y) & const Size(1, 1), p);
+    final psize = Size(precision, precision);
+
+    canvas.drawRect(makeOffset(size, pixel.x, pixel.y) & psize, p);
   }
 
   void drawLine(Line line) {
@@ -132,5 +141,53 @@ class Easel {
     final co = c.center.toCenteredOffset(size);
 
     canvas.drawCircle(co, c.radius, p);
+  }
+
+  void drawSegment(Segment seg) {
+    final a = seg.a;
+    final b = seg.b;
+    final precision = seg.precision;
+
+    final unit = 1 / precision;
+    // final p = Paint()..color = seg.color;
+
+    if ((b.x - a.x).abs() > (b.y - a.y).abs()) {
+      if (a.x > b.x) {
+        drawSegment(Segment(b, a));
+        return;
+      }
+      final ys = EaselHelper.interpolate(a.x, a.y, b.x, b.y, precision);
+
+      var x = a.x;
+      final len = ys.length;
+      for (int i = 0; i < len; i++) {
+        final mixed = a.color.mix(b.color, i / len);
+        putPixel(Pixel(
+          x,
+          ys[i].toDouble(),
+          mixed,
+        ));
+        x += unit;
+      }
+    } else {
+      if (a.y > b.y) {
+        drawSegment(Segment(b, a));
+        return;
+      }
+
+      final xs = EaselHelper.interpolate(a.y, a.x, b.y, b.x, precision);
+
+      var y = a.y;
+      final len = xs.length;
+      for (int i = 0; i < len; i++) {
+        final mixed = a.color.mix(b.color, i / len);
+        putPixel(Pixel(
+          xs[i].toDouble(),
+          y,
+          mixed,
+        ));
+        y += unit;
+      }
+    }
   }
 }

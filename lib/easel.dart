@@ -8,5 +8,6 @@ export 'src/drawable/drawable.dart';
 
 export 'src/easel/easel.dart';
 export 'src/easel/easel_color.dart';
+export 'src/easel/easel_helper.dart';
 
 export 'src/widget/widget.dart';
