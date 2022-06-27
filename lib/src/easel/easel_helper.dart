@@ -13,7 +13,7 @@ abstract class EaselHelper {
     final gap = (if1 - if0) * precision;
 
     num d = d0;
-    double a = ((d1 - d0) / gap) / precision;
+    double a = ((d1 - d0) / gap);
 
     for (int i = 0; i <= gap; i++) {
       values.add(d);
