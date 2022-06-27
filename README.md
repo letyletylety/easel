@@ -2,7 +2,7 @@
 
 The CustomPaint in declarative way
 
-![Circle example](./circle.png)
+![Circle example](https://i.ibb.co/BPk0tmQ/circle-example.png)
 
 ```dart
 Artwork(
@@ -22,6 +22,7 @@ see [Examples](https://letyletylety.gitlab.io/easel_by_example/)
 
 ## TODOs
 
+- [ ] text
 - [ ] 3D scene
 - [ ] gesture detecting
 - [ ] animation
