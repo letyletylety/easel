@@ -9,7 +9,7 @@ import 'package:go_router/go_router.dart';
 /// // means seperate and put divider
 abstract class RouteNames {
   static const _pageOrder =
-      '$index//$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle//';
+      '/$pixel/$line/$segment/$triangle/>$wireFrameTri/>$filledTri/$circle//';
 
   static const index = 'index';
   static const pixel = 'pixel';
@@ -20,6 +20,8 @@ abstract class RouteNames {
   static const line = 'line';
 
   static const circle = 'circle';
+
+  static const segment = 'segment';
 }
 
 final gorouter = GoRouter(
@@ -45,16 +47,25 @@ final gorouter = GoRouter(
     GoRoute(
       path: '/line',
       name: RouteNames.line,
-      builder: (ctx, st) => const LinePage(),
+      // builder: (ctx, st) => const LinePage(),
       pageBuilder: (context, st) => MaterialPage(
         key: st.pageKey,
         child: const LinePage(),
       ),
     ),
     GoRoute(
+      path: '/${RouteNames.segment}',
+      name: RouteNames.segment,
+      // builder: (ctx, st) => const LinePage(),
+      pageBuilder: (context, st) => MaterialPage(
+        key: st.pageKey,
+        child: const SegmentPage(),
+      ),
+    ),
+    GoRoute(
       path: '/triangle',
       name: RouteNames.triangle,
-      builder: (ctx, st) => const TrianglePage(),
+      // builder: (ctx, st) => const TrianglePage(),
       pageBuilder: (context, st) => MaterialPage(
         key: st.pageKey,
         child: const TrianglePage(),
