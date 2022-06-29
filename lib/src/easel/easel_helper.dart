@@ -1,3 +1,5 @@
+import 'package:easel/easel.dart';
+
 /// helper class
 abstract class EaselHelper {
   static List<num> interpolate(num i0, num d0, num i1, num d1,
@@ -21,5 +23,34 @@ abstract class EaselHelper {
     }
 
     return values;
+  }
+
+  /// divide segment into the list of pixels
+  static List<Pixel> divideSegment(Segment seg) {
+    final a = seg.a;
+    final b = seg.b;
+
+    final dx = (a.x - b.x).abs();
+    final dy = (a.y - b.y).abs();
+
+    late final unit;
+    if (dx < dy) {
+      unit = dy;
+    } else {
+      unit = dx;
+    }
+
+    // a == b
+    if (unit == 0) {
+      return [a];
+    }
+
+    final result = <Pixel>[];
+
+    for (int i = 0; i <= unit; i++) {
+      result.add(Pixel(a.x + dx / unit, a.y + dy / unit));
+    }
+
+    return result;
   }
 }

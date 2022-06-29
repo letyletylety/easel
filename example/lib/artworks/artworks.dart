@@ -7,3 +7,4 @@ export 'wireframe_tri_artwork.dart';
 export 'filled_tri_artwork.dart';
 export 'circle_artwork.dart';
 export 'segment_artwork.dart';
+export 'trigon_artwork.dart';

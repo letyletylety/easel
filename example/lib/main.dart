@@ -1,5 +1,6 @@
 import 'package:easel/easel.dart';
 import 'package:easel_example/artworks/artworks.dart';
+import 'package:easel_example/artworks/routes.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {

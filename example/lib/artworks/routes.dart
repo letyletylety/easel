@@ -76,6 +76,22 @@ final gorouter = GoRouter(
         child: const CirclePage(),
       ),
     ),
+    GoRoute(
+      path: '/${RouteNames.trigon}',
+      name: RouteNames.trigon,
+      pageBuilder: (context, st) => MaterialPage(
+        key: st.pageKey,
+        child: const TrigonPage(),
+      ),
+    ),
+    // GoRoute(
+    //   path: '/${RouteNames.circle}',
+    //   name: RouteNames.circle,
+    //   pageBuilder: (context, st) => MaterialPage(
+    //     key: st.pageKey,
+    //     child: const CirclePage(),
+    //   ),
+    // ),
     // GoRoute(path: ),
   ],
   urlPathStrategy: UrlPathStrategy.path,
