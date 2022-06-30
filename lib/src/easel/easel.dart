@@ -200,11 +200,16 @@ class Easel {
     final b = sorted.b;
     final c = sorted.c;
 
+    debugPrint("$a, $b, $c");
+
     // |AB|
     final abPixels = EaselHelper.divideSegment(Segment(a, b));
 
     // |AC|
     final acPixels = EaselHelper.divideSegment(Segment(a, c));
+
+    debugPrint(abPixels.length.toString());
+    debugPrint(acPixels.length.toString());
 
     if (abPixels.length < acPixels.length) {
       final ratio = acPixels.length / abPixels.length;
@@ -215,10 +220,12 @@ class Easel {
       }
     } else {
       final ratio = abPixels.length / acPixels.length;
+      debugPrint(ratio.toString());
       for (int i = 0; i < acPixels.length; i++) {
-        drawSegment(
-          Segment(acPixels[i], abPixels[(ratio * i).floor()], precision: 1),
-        );
+        final seg =
+            Segment(acPixels[i], abPixels[(ratio * i).floor()], precision: 1);
+        // debugPrint(seg.toString());
+        drawSegment(seg);
       }
     }
   }

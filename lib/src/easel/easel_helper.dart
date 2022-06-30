@@ -33,7 +33,7 @@ abstract class EaselHelper {
     final dx = (a.x - b.x).abs();
     final dy = (a.y - b.y).abs();
 
-    late final unit;
+    late final double unit;
     if (dx < dy) {
       unit = dy;
     } else {
@@ -45,10 +45,14 @@ abstract class EaselHelper {
       return [a];
     }
 
-    final result = <Pixel>[];
+    final result = <Pixel>[a];
 
-    for (int i = 0; i <= unit; i++) {
-      result.add(Pixel(a.x + dx / unit, a.y + dy / unit));
+    for (int i = 1; i <= unit; i++) {
+      result.add(Pixel(
+        a.x + i * (b.x - a.x) / unit,
+        a.y + i * (b.y - a.y) / unit,
+        a.color.mix(b.color, i / unit),
+      ));
     }
 
     return result;
