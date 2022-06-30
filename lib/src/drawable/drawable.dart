@@ -4,3 +4,4 @@ export 'drawables/triangle.dart';
 export 'drawables/circle.dart';
 export 'drawables/drawable.dart';
 export 'drawables/segment.dart';
+export 'drawables/trigon.dart';

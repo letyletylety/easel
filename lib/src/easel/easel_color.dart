@@ -33,7 +33,13 @@ extension EaselColor on Color {
   /// [otherRatio] should be in [0, 1], otherwise it will be clamped.
   Color mix(Color other, [otherRatio = 0.5]) {
     otherRatio = otherRatio.clamp(0, 1);
-    return (this * (1 - otherRatio)) + (other * otherRatio);
+
+    final a = alpha * (1 - otherRatio) + other.alpha * otherRatio;
+    final r = red * (1 - otherRatio) + other.red * otherRatio;
+    final g = green * (1 - otherRatio) + other.green * otherRatio;
+    final b = blue * (1 - otherRatio) + other.blue * otherRatio;
+
+    return clamp(a.round(), r.round(), g.round(), b.round());
   }
 
   String show() {

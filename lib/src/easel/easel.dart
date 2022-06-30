@@ -1,6 +1,7 @@
 import 'package:easel/src/2d/area_object.dart';
 import 'package:easel/src/drawable/drawable.dart';
 import 'package:easel/src/easel/easel_color.dart';
+import 'package:easel/src/easel/easel_helper.dart';
 import 'package:flutter/material.dart';
 
 // the 2D canvas
@@ -42,7 +43,10 @@ class Easel {
           Segment seg = drawable as Segment;
           drawSegment(seg);
           break;
-
+        case Trigon:
+          Trigon tri = drawable as Trigon;
+          drawTrigon(tri);
+          break;
         default:
           debugPrint('can\'t draw : unknown type: ?');
       }
@@ -189,51 +193,40 @@ class Easel {
       nextPoint += Offset(dx, dy);
     }
   }
-  //   final unit = 1.0 / precision;
-  //   // final p = Paint()..color = seg.color;
 
-  //   if ((b.x - a.x).abs() > (b.y - a.y).abs()) {
-  //     if (a.x > b.x) {
-  //       drawSegment(Segment(b, a));
-  //       return;
-  //     }
-  //     final ys = EaselHelper.interpolate(a.x, a.y, b.x, b.y, precision);
+  void drawTrigon(Trigon tri) {
+    final sorted = tri.sort();
+    final a = sorted.a;
+    final b = sorted.b;
+    final c = sorted.c;
 
-  //     var x = a.x;
-  //     final len = ys.length;
-  //     for (int i = 0; i < len; i++) {
-  //       final mixed = a.color.mix(b.color, i / len);
-  //       putPixel(
-  //         Pixel(
-  //           x,
-  //           ys[i].toDouble(),
-  //           mixed,
-  //         ),
-  //         // unit.toDouble(),
-  //       );
-  //       x += unit;
-  //     }
-  //   } else {
-  //     if (a.y > b.y) {
-  //       drawSegment(Segment(b, a));
-  //       return;
-  //     }
+    debugPrint("$a, $b, $c");
 
-  //     final xs = EaselHelper.interpolate(a.y, a.x, b.y, b.x, precision);
+    // |AB|
+    final abPixels = EaselHelper.divideSegment(Segment(a, b));
 
-  //     var y = a.y;
-  //     final len = xs.length;
-  //     for (int i = 0; i < len; i++) {
-  //       final mixed = a.color.mix(b.color, i / len);
-  //       putPixel(
-  //         Pixel(
-  //           xs[i].toDouble(),
-  //           y,
-  //           mixed,
-  //         ),
-  //         // unit.toDouble(),
-  //       );
-  //       y += unit;
-  //     }
-  //   }
+    // |AC|
+    final acPixels = EaselHelper.divideSegment(Segment(a, c));
+
+    debugPrint(abPixels.length.toString());
+    debugPrint(acPixels.length.toString());
+
+    if (abPixels.length < acPixels.length) {
+      final ratio = acPixels.length / abPixels.length;
+      for (int i = 0; i < abPixels.length; i++) {
+        drawSegment(
+          Segment(abPixels[i], acPixels[(ratio * i).floor()], precision: 1),
+        );
+      }
+    } else {
+      final ratio = abPixels.length / acPixels.length;
+      debugPrint(ratio.toString());
+      for (int i = 0; i < acPixels.length; i++) {
+        final seg =
+            Segment(acPixels[i], abPixels[(ratio * i).floor()], precision: 1);
+        // debugPrint(seg.toString());
+        drawSegment(seg);
+      }
+    }
+  }
 }

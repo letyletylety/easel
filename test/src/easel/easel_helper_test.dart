@@ -24,5 +24,22 @@ void main() {
 
       print(result);
     });
+
+    group('divide segment test', () {
+      test('1', () {
+        final result = EaselHelper.divideSegment(
+            Segment(Pixel(-100, 100), Pixel(100, 50)));
+        for (var element in result) {
+          expect(element.color, ColoredDrawable.black);
+        }
+      });
+      test('2', () {
+        final result = EaselHelper.divideSegment(
+            Segment(Pixel(-170, 100), Pixel(100, 50)));
+        for (var element in result) {
+          expect(element.color, ColoredDrawable.black);
+        }
+      });
+    });
   });
 }

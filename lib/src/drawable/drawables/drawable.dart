@@ -33,6 +33,13 @@ mixin HasPrecision on Drawable {
   }
 }
 
+mixin Stringer on Drawable {
+  @override
+  String toString() {
+    return super.toString();
+  }
+}
+
 class PrecisionError extends Error {
   PrecisionError(String s);
 }

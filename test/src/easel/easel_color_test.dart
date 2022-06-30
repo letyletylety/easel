@@ -1,4 +1,4 @@
-import 'package:easel/src/easel/easel_color.dart';
+import 'package:easel/easel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -31,6 +31,18 @@ void main() {
     test('0', () {
       final wholeblack = red.mix(black, 1);
       expect(wholeblack, black);
+    });
+
+    test('same color test', () {
+      const black1 = ColoredDrawable.black;
+      const black2 = ColoredDrawable.black;
+
+      for (int i = 0; i <= 100; i++) {
+        final color = black1.mix(black2, i / 100);
+        if (color != black1) {
+          debugPrint(color.toString());
+        } else {}
+      }
     });
   });
 }
