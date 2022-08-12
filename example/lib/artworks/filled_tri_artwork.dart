@@ -23,7 +23,7 @@ Artwork(
         left: CuratorMessage(strings: [
           buildTextSpanln(''),
         ]),
-        right: Artwork(
+        right: Easel(
           components: [
             FilledTriangle(Point(-200, -250), Point(200, 50), Point(20, 250)),
             FilledTriangle.xyxyxy(-200, -50, 200, 250, 20, -70,
@@ -37,7 +37,7 @@ Artwork(
         left: CuratorMessage(strings: [
           buildTextSpanln('helo'),
         ]),
-        right: Artwork(
+        right: Easel(
           components: [
             ShadedTriangle(Point(-200, -250), Point(200, 50), Point(20, 250)),
             ShadedTriangle.xyxyxy(-200, -50, 200, 250, 20, -70,

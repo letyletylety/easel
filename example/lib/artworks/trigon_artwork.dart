@@ -29,7 +29,7 @@ Artwork(
   ],
 ),
 """),
-          right: Artwork(
+          right: Easel(
             width: 400,
             height: 400,
             components: [

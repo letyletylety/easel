@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 
 // the 2D canvas
 // canvas helper
-class Easel {
+class Artwork {
   final Canvas canvas;
   final Size size;
 
-  const Easel(this.canvas, this.size);
+  const Artwork(this.canvas, this.size);
 
   void drawAll(List<Drawable> component) {
     for (Drawable drawable in component) {
@@ -27,6 +27,7 @@ class Easel {
           WireFrameTriangle wt = drawable as WireFrameTriangle;
           drawWireframeTriangle(wt);
           break;
+          
         case FilledTriangle:
           FilledTriangle ft = drawable as FilledTriangle;
           drawFilledTriangle(ft);

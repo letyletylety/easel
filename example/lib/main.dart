@@ -61,7 +61,7 @@ class MainPage extends StatelessWidget {
                 Center(
                   child: Container(
                     decoration: BoxDecoration(border: Border.all()),
-                    child: Artwork(
+                    child: Easel(
                       height: 400,
                       width: 400,
                       components: [

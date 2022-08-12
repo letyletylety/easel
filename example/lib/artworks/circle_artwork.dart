@@ -34,7 +34,7 @@ class CirclePage extends StatelessWidget {
           left: const CuratorMessage(
             strings: [],
           ),
-          right: Artwork(
+          right: Easel(
             width: 400,
             height: 400,
             components: [

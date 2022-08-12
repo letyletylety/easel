@@ -1,5 +1,5 @@
 import 'package:easel/src/drawable/drawables/drawable.dart';
-import 'package:easel/src/easel/easel.dart';
+import 'package:easel/src/easel/artwork.dart';
 import 'package:flutter/material.dart';
 
 /// Easel 에 Artwork를 그릴 무명 화가
@@ -12,7 +12,7 @@ class UnknownPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Easel e = Easel(canvas, size);
+    final Artwork e = Artwork(canvas, size);
 
     e.drawAll(order);
   }

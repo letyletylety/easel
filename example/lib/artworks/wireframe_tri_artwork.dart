@@ -39,7 +39,7 @@ class WireFrameTriPage extends StatelessWidget {
         ),
         ArtworkColumn(
           left: const CuratorMessage(strings: []),
-          right: Artwork(
+          right: Easel(
             components: [
               // this is helper method
               ...coordLines(500, 500),

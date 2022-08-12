@@ -49,7 +49,7 @@ Artwork(
               buildTextSpan('Artwork 가운데에 빨간 픽셀을 하나 그렸습니다.'),
             ]),
           ),
-          right: Artwork(
+          right: Easel(
             components: [
               Pixel(0, 0, Colors.red),
             ],
@@ -121,7 +121,7 @@ class _PixelArtColumnState extends State<PixelArtColumn> {
         stream: _colorStreamController.stream,
         builder:
             (BuildContext context, AsyncSnapshot<List<Drawable>> snapshot) {
-          return Artwork(
+          return Easel(
             components: snapshot.data ?? [],
             width: 50,
             height: 50,

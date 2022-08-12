@@ -1,12 +1,12 @@
 import 'package:vector_math/vector_math_64.dart';
 
-import '../easel/easel.dart';
+import '../easel/artwork.dart';
 
 /// 3D
 /// the set of objects you may be interested in rendering
 class Scene {
   Camera camera = Camera();
-  late Easel viewport; //= Easel(canvas, size);
+  late Artwork viewport; //= Easel(canvas, size);
 
   Scene();
 }

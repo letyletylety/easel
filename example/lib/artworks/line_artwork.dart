@@ -43,7 +43,7 @@ class LineArtwork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Artwork(
+    return Easel(
       components: [
         Line(Point(100, 200), Point(-100, -200), color: Colors.red),
         Line(Point(100, 100), Point(-100, -100), color: Colors.yellow),

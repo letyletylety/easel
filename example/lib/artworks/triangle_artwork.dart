@@ -53,7 +53,7 @@ class _TrianglePageState extends State<TrianglePage> {
               buildLineBreak(2),
             ],
           ),
-          right: Artwork(
+          right: Easel(
             components: [
               // this is helper method
               ...coordLines(500, 500),
