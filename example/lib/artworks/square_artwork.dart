@@ -7,13 +7,20 @@ class SquareArtworkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ArtworkScaffoldSingleColumn(title: 'line', children: [
+    return ArtworkScaffoldSingleColumn(title: 'Square', children: [
       ArtworkColumn(
-        left: CuratorMessage(strings: []),
+        left: CuratorMessage(strings: [
+          buildBoldWord('Square'),
+          buildTextSpan(' '),
+          buildTextSpanln('는 사각형을 그려준다.', 2),
+          buildTextSpanln('dart:ui 의 Rect를 사용한다.', 2),
+          buildTextSpanln('color 로 색상을 지정할 수 있다.'),
+        ]),
         right: const CodeText('''
 Easel(
   components: [
     Square(Rect.fromLTWH(100, 100, 200, 200)),
+    Square(Rect.fromLTWH(10, 10, 200, 200), color: Colors.red),
   ],
   height: 400,
   width: 400,
@@ -39,7 +46,8 @@ class SquareArtwork extends StatelessWidget {
         height: 400,
         child: Easel(
           components: [
-            Square(Rect.fromLTWH(100, 100, 200, 200)),
+            Square(const Rect.fromLTWH(100, 100, 200, 200)),
+            Square(const Rect.fromLTWH(10, 10, 200, 200), color: Colors.red),
           ],
           height: 400,
           width: 400,
