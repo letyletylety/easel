@@ -9,7 +9,7 @@ class FilledTriPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ArtworkScaffoldSingleColumn(title: 'FilledTriangle', children: [
       const ArtworkColumn(left: CuratorMessage(strings: []), right: CodeText("""
-Artwork(
+Easel(
   components: [
     FilledTriangle(Point(-200, -250), Point(200, 50), Point(20, 250)),
     FilledTriangle.xyxyxy(-200, -50, 200, 250, 20, -70,

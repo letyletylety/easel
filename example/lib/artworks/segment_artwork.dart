@@ -39,7 +39,7 @@ class SegmentPage extends StatelessWidget {
           buildTextSpanln('기본값은 10으로 설정되어 있습니다.', 2),
         ]),
         right: const CodeText("""
-Artwork(width: 400, height: 400, components: [
+Easel(width: 400, height: 400, components: [
   // Line(Point(-100, 150), Point(100, 150)),
   Segment(Pixel(-100, 150), Pixel(100, 150)),
   Segment(Pixel(-100, 100, const Color(0xFFFF0000)), Pixel(100, 100)),

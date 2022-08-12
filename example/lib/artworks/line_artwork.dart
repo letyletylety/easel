@@ -18,7 +18,7 @@ class LinePage extends StatelessWidget {
           buildTextSpanln('color와 thickness 등을 이용할 수 있습니다.'),
         ]),
         right: const CodeText('''
-Artwork(
+Easel(
   components: [
     Line(Point(100, 200), Point(-100, -200), color: Colors.red),
     Line(Point(100, 100), Point(-100, -100), color: Colors.yellow),
