@@ -1,6 +1,6 @@
 name: easel
 description: The CustomPaint in a declarative way. We need more precise way to draw something in the canvas.
-version: 0.0.3
+version: 0.0.4
 homepage(example): https://letyletylety.gitlab.io/easel_by_example/
 repository: https://github.com/letyletylety/easel
 issue_tracker: https://github.com/letyletylety/easel/issues

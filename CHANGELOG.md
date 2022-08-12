@@ -12,3 +12,8 @@
 
 - Add more detail to the description field of pubspec.yaml.
 - add trigon
+
+## 0.0.4
+
+- add square
+- (IMPORTANT) swap each name of easel and artwork
