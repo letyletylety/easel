@@ -1,8 +1,9 @@
 import 'package:easel_example/artworks/artworks.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 
-class ExampleScaffold extends StatelessWidget {
+class ExampleScaffold extends HookWidget {
   const ExampleScaffold({Key? key, required this.body, required this.title})
       : super(key: key);
 
@@ -11,6 +12,8 @@ class ExampleScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scon = useScrollController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -36,7 +39,10 @@ class ExampleScaffold extends StatelessWidget {
             ),
             const Text('Easel Examples'),
             Expanded(
-              child: ListView(children: buildMenu(context)),
+              child: ListView(
+                controller: scon,
+                children: buildMenu(context),
+              ),
             ),
           ],
         ),
