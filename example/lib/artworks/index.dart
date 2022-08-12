@@ -7,13 +7,14 @@ import 'package:go_router/go_router.dart';
 /// // means seperate and put divider
 abstract class RouteNames {
   static const _pageOrder =
-      '/$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle//$segment/$trigon';
+      '/$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle/$square//$segment/$trigon';
 
   static const index = 'index';
   static const pixel = 'pixel';
   static const triangle = 'triangle';
   static const wireFrameTri = 'wireFrameTri';
   static const filledTri = 'filledTri';
+  static const square = 'square';
 
   static const line = 'line';
 

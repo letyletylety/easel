@@ -1,4 +1,5 @@
 import 'package:easel_example/artworks/artworks.dart';
+import 'package:easel_example/artworks/square_artwork.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -82,6 +83,14 @@ final gorouter = GoRouter(
       pageBuilder: (context, st) => MaterialPage(
         key: st.pageKey,
         child: const TrigonPage(),
+      ),
+    ),
+    GoRoute(
+      path: '/${RouteNames.square}',
+      name: RouteNames.square,
+      pageBuilder: (context, st) => MaterialPage(
+        key: st.pageKey,
+        child: const SquareArtworkPage(),
       ),
     ),
     // GoRoute(

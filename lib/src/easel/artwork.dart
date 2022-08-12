@@ -1,5 +1,5 @@
 import 'package:easel/src/2d/area_object.dart';
-import 'package:easel/src/drawable/drawable.dart';
+import 'package:easel/src/drawable/drawables.dart';
 import 'package:easel/src/easel/easel_color.dart';
 import 'package:easel/src/easel/easel_helper.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class Artwork {
           WireFrameTriangle wt = drawable as WireFrameTriangle;
           drawWireframeTriangle(wt);
           break;
-          
+
         case FilledTriangle:
           FilledTriangle ft = drawable as FilledTriangle;
           drawFilledTriangle(ft);
@@ -47,6 +47,10 @@ class Artwork {
         case Trigon:
           Trigon tri = drawable as Trigon;
           drawTrigon(tri);
+          break;
+        case Square:
+          Square square = drawable as Square;
+          drawSquare(square);
           break;
         default:
           debugPrint('can\'t draw : unknown type: ?');
@@ -229,5 +233,12 @@ class Artwork {
         drawSegment(seg);
       }
     }
+  }
+
+  void drawSquare(Square s) {
+    final rect = s.rect;
+    final p = Paint()..color = s.color;
+
+    canvas.drawRect(rect, p);
   }
 }
