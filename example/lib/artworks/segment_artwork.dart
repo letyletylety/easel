@@ -73,7 +73,7 @@ Artwork(width: 400, height: 400, components: [
       ),
       ArtworkColumn(
         left: const CuratorMessage(strings: []),
-        right: Artwork(width: 400, height: 400, components: [
+        right: Easel(width: 400, height: 400, components: [
           // same as Line(Point(-100, 150), Point(100, 150)),
           Segment(Pixel(-100, 150), Pixel(100, 150)),
           Segment(Pixel(-100, 100, const Color(0xFFFF0000)), Pixel(100, 100)),

@@ -12,3 +12,8 @@
 
 - Add more detail to the description field of pubspec.yaml.
 - add trigon
+
+## 0.1.0
+
+- Add FilledTriArtwork
+- define draw method in Drawable class.

@@ -6,14 +6,17 @@ import 'package:go_router/go_router.dart';
 /// / seperate pages
 /// // means seperate and put divider
 abstract class RouteNames {
+  // static const _pageOrder =
+  //     '/$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle/$square//$segment/$trigon';
   static const _pageOrder =
-      '/$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle//$segment/$trigon';
+      '#Base Shape/$pixel/$line/$triangle/>$wireFrameTri/>$filledTri/$circle/$square//';
 
   static const index = 'index';
   static const pixel = 'pixel';
   static const triangle = 'triangle';
   static const wireFrameTri = 'wireFrameTri';
   static const filledTri = 'filledTri';
+  static const square = 'square';
 
   static const line = 'line';
 
@@ -31,6 +34,21 @@ List<Widget> buildMenu(BuildContext context) {
     if (e.isEmpty) {
       return const Divider();
     }
+
+    if (e.startsWith('#')) {
+      e = e.replaceFirst('#', '');
+      return ListTile(
+        leading: Text(
+          e,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w700,
+            fontSize: 20,
+          ),
+        ),
+      );
+    }
+
     if (e.startsWith('>')) {
       e = e.replaceFirst('>', '');
       return ListTile(

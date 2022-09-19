@@ -5,7 +5,7 @@ The CustomPaint in declarative way
 ![Circle example](https://i.ibb.co/BPk0tmQ/circle-example.png)
 
 ```dart
-Artwork(
+Easel(
     width: 400,
     height: 400,
     components: [
@@ -39,7 +39,7 @@ see [Examples](https://letyletylety.gitlab.io/easel_by_example/)
 
 3. update **[drawAll]** method in **[Easel]** class
 
-4. make example in **artwork** directory
+4. make example in **example/artworks** directory
 
 ---
 

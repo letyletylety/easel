@@ -11,7 +11,7 @@ class PixelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String code = """
-Artwork(
+Easel(
   components: [
     Pixel(0, 0, Colors.red),
   ], 
@@ -27,8 +27,8 @@ Artwork(
           left: RichText(
             text: TextSpan(
               children: [
-                buildBoldWord('Artwork'),
-                buildTextSpan('는 기존의 CustomPaint 를 대체하는 클래스 입니다.'),
+                buildBoldWord('Easel'),
+                buildTextSpan('은 기존의 CustomPaint 를 대체하는 클래스 입니다.'),
                 buildLineBreak(2),
                 buildTextSpan('component 속성에 어떤 것을 그릴 것인지를 지정합니다.'),
                 buildLineBreak(2),
@@ -49,7 +49,7 @@ Artwork(
               buildTextSpan('Artwork 가운데에 빨간 픽셀을 하나 그렸습니다.'),
             ]),
           ),
-          right: Artwork(
+          right: Easel(
             components: [
               Pixel(0, 0, Colors.red),
             ],
@@ -121,7 +121,7 @@ class _PixelArtColumnState extends State<PixelArtColumn> {
         stream: _colorStreamController.stream,
         builder:
             (BuildContext context, AsyncSnapshot<List<Drawable>> snapshot) {
-          return Artwork(
+          return Easel(
             components: snapshot.data ?? [],
             width: 50,
             height: 50,

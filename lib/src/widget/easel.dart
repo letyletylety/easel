@@ -1,10 +1,13 @@
-import 'package:easel/src/drawable/drawables/drawable.dart';
-import 'package:easel/src/widget/widget.dart';
 import 'package:flutter/material.dart';
 
+import '../drawable/drawables/drawable.dart';
+import 'unknown_painter.dart';
+
+/// Easel
+/// CustomCanvas 를 대체하는 위젯
 /// widget
-class Artwork extends StatelessWidget {
-  const Artwork({
+class Easel extends StatelessWidget {
+  const Easel({
     Key? key,
     required this.components,
     this.width = 0,

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:easel/src/2d/area_object.dart';
 import 'package:easel/src/drawable/drawables/drawable.dart';
+import 'package:easel/src/easel/artwork.dart';
 
 class Line extends ColoredDrawable with HasThickness {
   final Point a;
@@ -20,5 +21,17 @@ class Line extends ColoredDrawable with HasThickness {
         b = Point(x1, y1),
         super(color) {
     changeThickness(thickness);
+  }
+
+  @override
+  void draw(Artwork artwork) {
+    final p = Paint()
+      ..color = color
+      ..strokeWidth = thickness;
+
+    final canvasSize = artwork.size;
+
+    artwork.canvas.drawLine(
+        a.toCenteredOffset(canvasSize), b.toCenteredOffset(canvasSize), p);
   }
 }
