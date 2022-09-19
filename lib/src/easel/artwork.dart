@@ -4,63 +4,69 @@ import 'package:easel/src/easel/easel_color.dart';
 import 'package:easel/src/easel/easel_helper.dart';
 import 'package:flutter/material.dart';
 
-// the 2D canvas
-// canvas helper
+/// the 2D canvas
+/// canvas helper
 class Artwork {
   final Canvas canvas;
   final Size size;
 
-  const Artwork(this.canvas, this.size);
+  final double pixelPrecision;
+
+  const Artwork(this.canvas, this.size, {this.pixelPrecision = 1});
 
   void drawAll(List<Drawable> component) {
-    for (Drawable drawable in component) {
-      switch (drawable.runtimeType) {
-        case Pixel:
-          Pixel p = drawable as Pixel;
-          putPixel(p);
-          break;
-        case Line:
-          Line l = drawable as Line;
-          drawLine(l);
-          break;
-        case WireFrameTriangle:
-          WireFrameTriangle wt = drawable as WireFrameTriangle;
-          drawWireframeTriangle(wt);
-          break;
-
-        case FilledTriangle:
-          FilledTriangle ft = drawable as FilledTriangle;
-          drawFilledTriangle(ft);
-          break;
-        case ShadedTriangle:
-          ShadedTriangle st = drawable as ShadedTriangle;
-          drawShadedTriangle(st);
-          break;
-        case Circle:
-          Circle c = drawable as Circle;
-          drawCircle(c);
-          break;
-        case Segment:
-          Segment seg = drawable as Segment;
-          drawSegment(seg);
-          break;
-        case Trigon:
-          Trigon tri = drawable as Trigon;
-          drawTrigon(tri);
-          break;
-        case Square:
-          Square square = drawable as Square;
-          drawSquare(square);
-          break;
-        default:
-          debugPrint('can\'t draw : unknown type: ?');
-      }
-      // if(drawable is Pixel){
-      //   putPixel(pixel);
-      // }else {
-
-      // }
+    for (var element in component) {
+      element.draw(this);
     }
+
+    // for (Drawable drawable in component) {
+    //   switch (drawable.runtimeType) {
+    //     case Pixel:
+    //       Pixel p = drawable as Pixel;
+    //       putPixel(p);
+    //       break;
+    //     case Line:
+    //       Line l = drawable as Line;
+    //       drawLine(l);
+    //       break;
+    //     case WireFrameTriangle:
+    //       WireFrameTriangle wt = drawable as WireFrameTriangle;
+    //       drawWireframeTriangle(wt);
+    //       break;
+
+    //     case FilledTriangle:
+    //       FilledTriangle ft = drawable as FilledTriangle;
+    //       drawFilledTriangle(ft);
+    //       break;
+    //     case ShadedTriangle:
+    //       ShadedTriangle st = drawable as ShadedTriangle;
+    //       drawShadedTriangle(st);
+    //       break;
+    //     case Circle:
+    //       Circle c = drawable as Circle;
+    //       drawCircle(c);
+    //       break;
+    //     case Segment:
+    //       Segment seg = drawable as Segment;
+    //       drawSegment(seg);
+    //       break;
+    //     case Trigon:
+    //       Trigon tri = drawable as Trigon;
+    //       drawTrigon(tri);
+    //       break;
+    //     case Square:
+    //       Square square = drawable as Square;
+    //       drawSquare(square);
+    //       break;
+    //     default:
+    //       debugPrint('can\'t draw : unknown type: ?');
+    //   }
+    //   // if(drawable is Pixel){
+    //   //   putPixel(pixel);
+    //   // }else {
+
+    //   // }
+    // }
   }
 
   Offset makeOffset(Size size, double x, double y) {

@@ -16,4 +16,7 @@ class Segment extends Drawable with HasPrecision, Stringer {
   String toString() {
     return "segment: $a $b";
   }
+
+  @override
+  void draw(Artwork artwork) {}
 }

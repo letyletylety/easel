@@ -30,4 +30,9 @@ class Trigon extends Drawable {
       }
     }
   }
+
+  @override
+  void draw(Artwork artwork) {
+    // TODO: implement draw
+  }
 }

@@ -1,12 +1,16 @@
 import 'package:easel/src/drawable/drawables/line.dart';
 import 'package:easel/src/drawable/drawables/pixel.dart';
+import 'package:easel/src/easel/artwork.dart';
 import 'package:flutter/material.dart';
 
-// 그릴 수 있는 것
-abstract class Drawable {}
+/// 그릴 수 있는 것
+abstract class Drawable {
+  /// 그리기
+  void draw(Artwork artwork);
+}
 
 // 색깔이 있는 그릴 수 있는 것
-class ColoredDrawable extends Drawable {
+abstract class ColoredDrawable extends Drawable {
   static const black = Color(0xFF000000);
 
   Color color = black;

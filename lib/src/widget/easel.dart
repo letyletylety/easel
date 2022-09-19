@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../drawable/drawables/drawable.dart';
 import 'unknown_painter.dart';
 
+/// Easel
+/// CustomCanvas 를 대체하는 위젯
 /// widget
 class Easel extends StatelessWidget {
   const Easel({
