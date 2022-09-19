@@ -48,6 +48,8 @@ class PrecisionError extends Error {
   PrecisionError(String s);
 }
 
+/// drawable debugger
+/// print drawable info
 abstract class DrawableDebugger {
   static print(Drawable drawable) {
     switch (drawable.runtimeType) {
@@ -59,6 +61,7 @@ abstract class DrawableDebugger {
         Line p = drawable as Line;
         debugPrint('Line: ${p.a.v}, ${p.b.v}, ${p.color}');
         break;
+      // TODO
       default:
         debugPrint('unknown type: ?');
     }
