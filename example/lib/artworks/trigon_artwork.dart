@@ -12,7 +12,7 @@ class TrigonPage extends StatelessWidget {
       children: [
         ArtworkColumn(
           left: const CodeText("""
-Artwork(
+Easel(
   width: 400,
   height: 400,
   components: [

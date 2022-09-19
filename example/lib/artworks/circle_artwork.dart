@@ -19,7 +19,7 @@ class CirclePage extends StatelessWidget {
               buildTextSpanln('xyr 생성자를 이용하면 Point를 따로 만들지 않아도 괜찮습니다.'),
             ],
           ),
-          right: const CodeText("""Artwork(
+          right: const CodeText("""Easel(
   width: 400,
   height: 400,
   components: [
